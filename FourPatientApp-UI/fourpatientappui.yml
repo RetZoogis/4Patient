@@ -1,0 +1,97 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: fourpatient
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    service.beta.kubernetes.io/azure-dns-label-name: fourpatient-frontend
+  name: fourpatient-frontend
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: fourpatient
+    role: ui
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fourpatient-frontend
+  labels:
+    app: fourpatient
+    role: ui
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fourpatient
+      role: ui
+  template:
+    metadata:
+      labels:
+        app: fourpatient
+        role: ui
+    spec:
+      imagePullSecrets:
+      - name: fourpatient-frontend
+      containers:
+      - name: ui
+        image: bacoordinationp3.azurecr.io/kwedwick/fourpatient-ui:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4200
+
+
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-staging
+spec:
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: nick.escalona@revature.com
+    privateKeySecretRef:
+      name: letsencrypt-staging-account
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: fourpatient-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-regex: 'true'
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - ba-coordination-p3.eastus.cloudapp.com
+    secretName: ba-coordination-p3-cert
+  rules:
+  - http:
+      paths:
+      - path: /fourpatient-frontend(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: fourpatient-frontend
+            port:
+              number: 80
+      - path: /fourpatient-webapi(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: fourpatient-webapi
+            port:
+              number: 80

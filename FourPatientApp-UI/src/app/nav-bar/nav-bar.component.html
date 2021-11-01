@@ -1,0 +1,46 @@
+
+   <!-- ======= Top Bar ======= -->
+   <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex justify-content-between">
+      <div id="onlyfans" class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope" ></i> <a href="mailto:contact@example.com" >keegan.wedwick@revature.net</a>
+       
+        <i class="bi bi-phone" ></i > +1 347 421 6387
+      </div>
+     
+    </div>
+  </div>
+
+<header id="header" class="fixed-top d-flex align-items-center">
+
+  <div class="container d-flex align-items-center">
+    <a href="index.html"> <img  src="assets/img/4PatientLogo.png" alt="help" class="img-fluid" ></a>
+    <h1 class="logo me-auto"></h1>
+    
+  
+    <!-- <img src="assets/img/slide/slide-3.png)" alt="damn"> -->
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        
+        <li><a routerLink="/create-review" >Make a Review</a></li>
+
+
+        <li><a href="hospital-view" >Hospitals</a></li>
+        <li><a href="profile" *ngIf="auth.isAuthenticated$ | async" >Profile</a></li>
+        <li><a (click)="loginWithRedirect()"  *ngIf="(auth.isAuthenticated$ | async) === false" >Log In</a></li>
+        <li><a (click)="logout()" *ngIf="auth.isAuthenticated$ | async" >Log Out</a></li>
+        
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header><!-- End Header -->
+
+
+
+

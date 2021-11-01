@@ -1,0 +1,363 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<pre>
+
+
+  
+
+  
+
+</pre>
+
+  <!-- THE REAL ONE -->
+<a >
+<div class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:text-center">
+        <h2 class="text-base text-indigo-600 font-semibold tracking-wide uppercase"></h2>
+        <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+        {{hospital?.name}}  
+        <!-- Protocols: {{covid?.protocols}}  Waiting Rooms: {{covid?.waitingRooms}}  Seperation: {{covid?.separation}} Safety: {{covid?.safety}} Screening: {{covid?.screening}} Treatment: {{covid?.treatment}} -->
+        </p>
+        <p class="mt-4  text-xl text-gray-500 lg:mx-auto">
+          {{hospital?.address}},  {{hospital?.city}}.  {{hospital?.state}} - {{hospital?.zipCode}}
+        </p>
+        <p class="mt-4  text-xl text-gray-500 lg:mx-auto">
+          {{hospital?.description}}
+        </p>
+      </div>
+      <div class="mt-5">
+        <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-4 md:gap-x-8 md:gap-y-10">     
+          <div class="relative">
+            <dt>
+              <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                <!-- Heroicon name: outline/scale -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                </svg>
+              </div>
+              <div class="ml-16 text-lg leading-6 font-medium text-gray-900">
+                Covid
+              </div>
+            </dt>
+            <dd class="mt-2 ml-16 text-base text-gray-500">
+              {{hospital?.covid}}
+            </dd>
+          </div> 
+
+          <div class="mt-10">
+            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">     
+              <div >
+                <dt>
+                  <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <div class="ml-16 text-lg leading-6 font-medium text-gray-900">Nursing</div>
+                </dt>
+                <dd class="mt-2 ml-16 text-base text-gray-500">
+                  {{hospital?.nursing}}
+                </dd>
+              </div>     
+            </dl>
+          </div>
+
+          <div class="mt-10">
+            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">     
+              <div >
+                <dt>
+                  <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <div class="ml-16 text-lg leading-6 font-medium text-gray-900">Comfort</div>
+                </dt>
+                <dd class="mt-2 ml-16 text-base text-gray-500">
+                  {{hospital?.comfort}}
+                </dd>
+              </div>     
+            </dl>
+          </div>
+
+          <div class="mt-10">
+            <dl class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">     
+              <div >
+                <dt>
+                  <div class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                    
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <div class="ml-16 text-lg leading-6 font-medium text-gray-900">Accommodation</div>
+                </dt>
+                <dd class="mt-2 ml-16 text-base text-gray-500">
+                  {{hospital?.accomodations}}          
+
+                </dd>
+              </div>     
+            </dl>
+          </div>
+
+
+
+
+        </dl>
+              
+      </div>
+     
+    </div>
+  </div>
+</a>
+<!-- 
+<app-review-view></app-review-view> -->
+
+<div class="flex flex-col">
+  <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <table class="min-w-full divide-y divide-gray-200">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-16 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+               
+              </th>
+              <th scope="col" class="px-16 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Message
+              </th>
+              <th scope="col" class="px-12 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Comfort
+              </th>
+              <th scope="col" class="px-12 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Nursing
+              </th>
+              <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Accommodation
+                </th>
+                <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Cleanliness
+                </th>  
+                <th scope="col" class="px-8 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Covid
+                </th>                
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">   
+          
+            <tr *ngFor="let review of reviews">
+              <td class="px-10 py-1 whitespace-nowrap">
+                <div class="flex items-center">                
+                  <div class="ml-4">
+                    <div class="text-sm font-medium text-gray-900">
+                      {{review.patient.firstName}} {{review.patient.lastName}}
+                    </div>
+                    <div class="text-sm text-gray-500">                     
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td class="px-10 py-1 whitespace-nowrap">
+                <div class="text-sm text-gray-900">{{review.message}}</div>
+                <div class="text-sm text-gray-500"></div>
+              </td>
+              <td class="px-10 py-1 whitespace-nowrap">
+                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                
+                  <div>
+                    <ng-template #t let-fill="fill">
+                      <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                      </span>
+                    </ng-template>
+                    
+                    <ngb-rating [(rate)]=review.comfort [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                  </div>
+
+                </span>
+              </td>
+              <td class="px-10 py-1 whitespace-nowrap text-sm text-gray-500">
+                
+                <div>
+                  <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                      <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                    </span>
+                  </ng-template>
+                  
+                  <ngb-rating [(rate)]=review.nursing.averageN [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                </div>
+
+              <td class="px-4 py-1 whitespace-nowrap text-sm text-gray-500">
+             
+              <div>
+                <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                  </span>
+                </ng-template>
+                
+                <ngb-rating [(rate)]=review.accommodation.averageA [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+              </div>
+
+                  
+                </td>
+                <td class="px-4 py-1 whitespace-nowrap text-sm text-gray-500">
+                  
+                  <div>
+                    <ng-template #t let-fill="fill">
+                      <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                      </span>
+                    </ng-template>
+                    
+                    <ngb-rating [(rate)]=review.cleanliness.averageCl [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                  </div>
+                 
+                </td>
+                <td class="px-4 py-1 whitespace-nowrap text-sm text-gray-500">
+                 
+                  <div>
+                    <ng-template #t let-fill="fill">
+                      <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+                      </span>
+                    </ng-template>
+                    
+                    <ngb-rating [(rate)]=review.covid.averageC [starTemplate]="t" [readonly]="true" [max]="5"></ngb-rating>
+                  </div>
+                 
+                </td>
+              <td class="px-16 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="#" class="text-indigo-600 hover:text-indigo-900">{{review.datePosted}}</a>
+              </td>
+            </tr>    
+          </tbody>
+        </table>
+     
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- component -->
+<!-- Add the variant -->
+  <!-- variants: {
+    extend: {
+      translate: ['group-hover'],
+    }
+  }, -->
+
+  <!-- Soon review at https://moviedate.netlify.app/ -->
+  <pre>
+
+
+  </pre>
+
+
+<!-- component -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 mb-12">
+  <article>
+      <h2 class="text-2xl font-extrabold text-gray-900">Covid - Statistics</h2>
+      <section class="mt-6 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-8">
+          <article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+              style="background-image: url(assets/img/COVID.png)">
+              <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+              <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                  <h3 class="text-center">
+                      <a class="text-white text-2xl font-bold text-center">
+                          <span class="absolute inset-0"></span>
+                          Protocols
+                          <P>
+                            {{covid?.protocols}}
+                          </P>
+                      </a>
+                      
+                  </h3>
+              </div>
+          </article>
+          <article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+          style="background-image: url(assets/img/COVID.png)">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+              <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                  <h3 class="text-center">
+                      <a class="text-white text-2xl font-bold text-center" >
+                          <span class="absolute inset-0"></span>
+                          Waiting Rooms
+                          <P>
+                            {{covid?.waitingRooms}}
+                          </P>
+                      </a>
+                  </h3>
+              </div>
+          </article>
+          <article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+          style="background-image: url(assets/img/COVID.png)">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+              <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+                  <h3 class="text-center">
+                      <a class="text-white text-2xl font-bold text-center" href="#">
+                          <span class="absolute inset-0"></span>
+                         Separation
+                         <P>
+                          {{covid?.separation}}
+                        </P>
+                      </a>
+                  </h3>
+              </div>
+          </article>
+          <article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+          style="background-image: url(assets/img/COVID.png)">
+            <div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+  <div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+      <h3 class="text-center">
+          <a class="text-white text-2xl font-bold text-center" href="#">
+              <span class="absolute inset-0"></span>
+              Safety
+              <P>
+                {{covid?.safety}}
+              </P>
+          </a>
+      </h3>
+  </div>
+</article>
+<article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+style="background-image: url(assets/img/COVID.png)">
+<div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+<div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+    <h3 class="text-center">
+        <a class="text-white text-2xl font-bold text-center" href="#">
+            <span class="absolute inset-0"></span>
+            Screening
+            <P>
+              {{covid?.screening}}
+            </P>
+        </a>
+    </h3>
+</div>
+</article>
+<article class="relative w-full h-64 bg-cover bg-center group rounded-lg overflow-hidden shadow-lg hover:shadow-2xl  transition duration-300 ease-in-out"
+style="background-image: url(assets/img/COVID.png)">
+<div class="absolute inset-0 bg-black bg-opacity-50 group-hover:opacity-75 transition duration-300 ease-in-out"></div>
+<div class="relative w-full h-full px-4 sm:px-6 lg:px-4 flex justify-center items-center">
+    <h3 class="text-center">
+        <a class="text-white text-2xl font-bold text-center" href="#">
+            <span class="absolute inset-0"></span>
+            Treatment
+            <P>
+              {{covid?.treatment}}
+            </P>
+        </a>
+    </h3>
+</div>
+</article>
+
+      </section>
+  </article>
+  
+</section>
+<!-- 
+end here -->
+

@@ -1,0 +1,104 @@
+trigger:
+  branches:
+    include:
+    - master
+    - Develop
+  paths:
+    include:
+    - FourPatient.WebAPI
+
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - FourPatient.WebAPI
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  solution: './FourPatient.WebAPI/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  symptDirectory: './FourPatient.WebAPI'
+  cReg: '2107-p3-acr-FourPatient'
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: NuGetToolInstaller@1
+
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '$(solution)'
+
+    - task: SonarCloudPrepare@1
+      inputs:
+        SonarCloud: 'FourPatient_Sonarcloud'
+        organization: '210726-wvu-net-ext'
+        scannerMode: 'MSBuild'
+        projectKey: 'FourPatient-Backend'
+        projectName: 'FourPatient-Backend'
+        extraProperties: |
+          sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/*/coverage.opencover.xml
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+
+    - script: dotnet test
+        --configuration Release
+        --collect:"XPlat Code Coverage"
+        --results-directory $(Agent.TempDirectory)
+        --
+        DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+      displayName: dotnet test
+      workingDirectory: $(symptDirectory)
+      continueOnError: true
+
+    - task: SonarCloudAnalyze@1
+      displayName: 'Run SonarCloud analysis'
+
+    - task: SonarCloudPublish@1
+      displayName: 'Publish results on build summary'
+        
+- stage: Docker
+  jobs:
+    - job: Docker_Build
+      displayName: Docker Build & Push
+      steps:
+      #Login
+      - task: Docker@2
+        displayName: Login
+        inputs:
+          containerRegistry: $(cReg)
+          command: 'login'
+      #Build
+      - task: Docker@2
+        displayName: Build & Push
+        inputs:
+          containerRegistry: '$(cReg)'
+          repository: 'kwedwick/fourpatient-api'
+          command: 'buildAndPush'
+          Dockerfile: '**/Dockerfile'
+          tags: 'latest'
+      #Publish artifact
+      - task: PublishPipelineArtifact@1
+        inputs:
+          targetPath: '$(symptDirectory)/fourpatient-web-api.yml'
+          artifact: 'manifest'
+          publishLocation: 'pipeline'
+      #logout
+      - task: Docker@2
+        displayName: Logout
+        inputs:
+          containerRegistry: $(cReg)
+          command: 'logout'

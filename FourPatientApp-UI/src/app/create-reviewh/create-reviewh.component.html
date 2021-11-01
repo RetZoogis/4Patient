@@ -1,0 +1,1464 @@
+<p>create-review works!</p>
+<pre>
+  <!-- <fieldset>
+    <legend class="text-base font-medium text-gray-900">By Email</legend>
+    <div class="mt-4 space-y-4">
+      <div class="flex items-start">
+        <div class="flex items-center h-5">
+          <input id="comments" name="comments" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+        </div>
+        <div class="ml-3 text-sm">
+          <label for="comments" class="font-medium text-gray-700">Comments</label>
+          <p class="text-gray-500">Get notified when someones posts a comment on a posting.</p>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <div class="flex items-center h-5">
+          <input id="candidates" name="candidates" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+        </div>
+        <div class="ml-3 text-sm">
+          <label for="candidates" class="font-medium text-gray-700">Candidates</label>
+          <p class="text-gray-500">Get notified when a candidate applies for a job.</p>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <div class="flex items-center h-5">
+          <input id="offers" name="offers" type="checkbox" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+        </div>
+        <div class="ml-3 text-sm">
+          <label for="offers" class="font-medium text-gray-700">Offers</label>
+          <p class="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+ -->
+
+
+
+</pre>
+
+
+<div >
+
+  <!-- <mat-icon>thump_up</mat-icon> -->
+  <mat-horizontal-stepper [labelPosition]="'bottom'">
+    <form [formGroup]="reviewForm"> 
+
+    <mat-step >
+      <ng-template matStepLabel><b>Accommodations</b></ng-template>
+   
+      <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-4 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+
+              <!-- <h2 class="text-lg font-medium leading-6 text-gray-900">Choose a hospital</h2>
+            
+              <mat-form-field appearance="fill">
+                <mat-label>Select an option</mat-label>
+                <mat-select [(value)]="selected">
+                  <a *ngFor="let hospital of hospitals">
+               
+                  
+                  <mat-option value="{{hospital.id}}">{{hospital.name}}</mat-option>
+                </a>
+                 
+                </mat-select>
+              </mat-form-field> -->
+              
+             
+            
+
+
+
+           
+              <h3 class="text-lg font-medium leading-6 text-gray-900"></h3>
+              <p class="mt-1 text-sm text-gray-600">
+             
+              </p>
+              
+            </div>
+            
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+
+            <form [formGroup]="accommodationForm">
+              <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Hospital Processes</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the checking in and checking out process?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="checkIn" formControlName="checkIn" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="checkIn" class="ml-3 block text-sm font-medium text-gray-700" >
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="checkIn" formControlName="checkIn" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="checkIn" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="checkIn" formControlName="checkIn" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="checkIn" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="checkIn" formControlName="checkIn" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="checkIn" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="checkIn" formControlName="checkIn" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="checkIn" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+      
+                      <p class="text-sm text-gray-500">How satisfied were you with the hospital's ease of discharge?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="discharge" formControlName="discharge" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="discharge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="discharge" formControlName="discharge" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="discharge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="discharge" formControlName="discharge" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="discharge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="discharge" formControlName="discharge" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="discharge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="discharge" formControlName="discharge" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="discharge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+               
+                      <p class="text-sm text-gray-500">How satisfied were you with the medical equipment/technology used?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="equipment" formControlName="equipment" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="equipment" formControlName="equipment" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="equipment" formControlName="equipment" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="equipment" formControlName="equipment" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="equipment" formControlName="equipment" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How satisfied were you with the hospital's visitation policies?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="policy" formControlName="policy" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="policy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="policy" formControlName="policy" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="policy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="policy" formControlName="policy" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="policy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="policy" formControlName="policy" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="policy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="policy" formControlName="policy" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="policy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Rooming and Privacy</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the amount of privacy provided?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="privacy" formControlName="privacy" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="privacy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="privacy" formControlName="privacy" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="privacy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="privacy" formControlName="privacy" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="privacy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="privacy" formControlName="privacy" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="privacy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="privacy" formControlName="privacy" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="privacy" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+               
+                      <p class="text-sm text-gray-500">How satisfied were you with the size of your room?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="room" formControlName="room" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="room" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="room" formControlName="room" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="room" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="room" formControlName="room" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="room" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="room" formControlName="room" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="room" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="room" formControlName="room" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="room" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Food Options</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the food options available?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="foodOptions" formControlName="foodOptions" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="foodOptions" formControlName="foodOptions" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="foodOptions" formControlName="foodOptions" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="foodOptions" formControlName="foodOptions" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="foodOptions" formControlName="foodOptions" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                     
+                      <p class="text-sm text-gray-500">How satisfied were you with the quality of the food?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="foodQuality" formControlName="foodQuality" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodQuality" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="foodQuality" formControlName="foodQuality" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodQuality" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="foodQuality" formControlName="foodQuality" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodQuality" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="foodQuality" formControlName="foodQuality" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodQuality" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="foodQuality" formControlName="foodQuality" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="foodQuality" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How satisfied were you with the range of dietary options?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="dietOptions" formControlName="dietOptions" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="dietOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="dietOptions" formControlName="dietOptions" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="dietOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="dietOptions" formControlName="dietOptions" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="dietOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="dietOptions" formControlName="dietOptions" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="dietOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="dietOptions" formControlName="dietOptions" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="dietOptions" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Handicap Accessibility</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the handicap accommodations?</p>
+                    </div>
+                    <div class="md:grid md:grid-cols-5 md:gap-6">                 
+                      <div class="flex items-center ">
+
+                        <input id="accessibility" formControlName="accessibility" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="accessibility" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="accessibility" formControlName="accessibility" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="accessibility" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="accessibility" formControlName="accessibility" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="accessibility" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="accessibility" formControlName="accessibility" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="accessibility" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="accessibility" formControlName="accessibility" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="accessibility" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                     
+                      <p class="text-sm text-gray-500">How satisfied were you with the parking accommodations?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="parking" formControlName="parking" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="parking" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="parking" formControlName="parking" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="parking" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="parking" formControlName="parking" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="parking" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="parking" formControlName="parking" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="parking" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="parking" formControlName="parking" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="parking" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                </div>
+
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperPrevious>
+                    Back
+                  </button>
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperNext>
+                    Next
+                  </button>
+                
+                </div>
+              </div>
+
+            </form>  
+
+          </div>     
+        </div>
+      </div>
+    
+    </mat-step>
+
+        <!-- CLEANLINESSSSSSSSSSSSSSS -->
+
+    <mat-step >
+      <ng-template matStepLabel><b>Cleanliness</b></ng-template>
+
+      <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-4 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+              <h3 class="text-lg font-medium leading-6 text-gray-900"></h3>
+              <p class="mt-1 text-sm text-gray-600">
+               
+              </p>
+              
+            </div>
+
+            
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+
+            <form [formGroup]="cleanlinessForm"  >
+              <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Cleanliness</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the cleanliness of the waiting room(s)</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="waitingroom"  formControlName="waitingroom"  value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                       
+                      <div class="flex items-center">
+                        <input id="waitingroom"   formControlName="waitingroom" value="2" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                 
+                      <div class="flex items-center">
+                        <input id="waitingroom"   formControlName="waitingroom" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitingroom"   formControlName="waitingroom" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitingroom"   formControlName="waitingroom" value="5" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+                  </fieldset>
+
+                  <fieldset>
+                    <div>
+      
+                      <p class="text-sm text-gray-500">How satisfied were you with the cleanliness of your ward room?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="wardroom"  formControlName="wardroom" value="1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="wardroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="wardroom"  formControlName="wardroom" value="2" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="wardroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="wardroom" formControlName="wardroom" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="wardroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="wardroom"  formControlName="wardroom" value="4"   type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="wardroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="wardroom"  formControlName="wardroom" value="5" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="wardroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+               
+                      <p class="text-sm text-gray-500">How satisfied were you with the cleanliness of the equipment used?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="equipment"  formControlName="equipment" value="1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="equipment"  formControlName="equipment" value="2" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="equipment"  formControlName="equipment" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="equipment"   formControlName="equipment" value="4" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="equipment"  formControlName="equipment" value="5" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="equipment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How satisfied were you with the cleanliness of the bahtorrom(s)</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="bathroom"  formControlName="bathroom" value="1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="bathroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="bathroom"  formControlName="bathroom" value="2" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="bathroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="bathroom"  formControlName="bathroom" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="bathroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="bathroom"  formControlName="bathroom" value="4" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="bathroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="bathroom"  formControlName="bathroom" value="5" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="bathroom" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  
+                </div>
+
+
+
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperPrevious>
+                    Back
+                  </button>
+                  <button  class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperNext>
+                    Next
+                  </button>
+                 
+                
+                </div>
+              </div>
+            </form>        
+          </div>     
+        </div>
+      </div>
+    
+   
+
+    </mat-step>
+
+
+<!-- NURSINGGGGGGGGGGGGGGGGGGGGGGG -->
+
+    <mat-step >
+      <ng-template matStepLabel><b>Nursing</b></ng-template>
+      <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-4 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+              <h3 class="text-lg font-medium leading-6 text-gray-900"></h3>
+              <p class="mt-1 text-sm text-gray-600">
+             
+              </p>
+              
+            </div>
+            
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+            <form [formGroup]="nursingForm">
+              <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Nursing</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the atttentiveness of your nurse?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="attentiveness" formControlName="attentiveness" value="1" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="attentiveness" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="attentiveness" formControlName="attentiveness" value="2" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="attentiveness" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="attentiveness"  formControlName="attentiveness" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="attentiveness" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="attentiveness" formControlName="attentiveness" value="4" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="attentiveness" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="attentiveness" formControlName="attentiveness" value="5" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="attentiveness" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+      
+                      <p class="text-sm text-gray-500">How satisfied were you with the transparency of your nurse?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="transparency"  formControlName="transparency" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="transparency" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="transparency" formControlName="transparency" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="transparency" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="transparency" formControlName="transparency" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="transparency" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="transparency" formControlName="transparency" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="transparency" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="transparency" formControlName="transparency" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="transparency" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+               
+                      <p class="text-sm text-gray-500">How satisfied were you with the knowledge of your nurse?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="knowledge" formControlName="knowledge" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="knowledge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="knowledge" formControlName="knowledge" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="knowledge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="knowledge" formControlName="knowledge" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="knowledge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="knowledge" formControlName="knowledge" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="knowledge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="knowledge" formControlName="knowledge" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="knowledge" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How satisfied were you with the compassion of your nurse?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="compassion" formControlName="compassion" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="compassion" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="compassion" formControlName="compassion" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="compassion" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="compassion" formControlName="compassion" value="3" type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="compassion" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="compassion" formControlName="compassion" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="compassion" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="compassion" formControlName="compassion" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="compassion" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How satisfied were you with the wait times concernign your nurse?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="waitTimes" formControlName="waitTimes" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitTimes" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="waitTimes" formControlName="waitTimes" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitTimes" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitTimes" formControlName="waitTimes" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitTimes" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitTimes" formConwaitTimestrolName="waitTimes" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitTimes" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitTimes" formControlName="waitTimes" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitTimes" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  
+                </div>
+
+
+
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperPrevious>
+                    Back
+                  </button>
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperNext>
+                    Next
+                  </button>
+                
+                </div>
+              </div>
+            </form>        
+          </div>     
+        </div>
+      </div>
+    
+
+    </mat-step>
+
+          <!-- COVIDDDDDDDDDDDDDDDDDDDDDDDDDD -->
+    <mat-step >
+      <ng-template matStepLabel><b>Covid</b></ng-template>
+      <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-4 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+              <h3 class="text-lg font-medium leading-6 text-gray-900"></h3>
+              <p class="mt-1 text-sm text-gray-600">
+             
+              </p>
+              
+
+            </div>
+            
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+
+            <form [formGroup]="covidForm">
+              <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">Covid Safety</legend>
+                      <p class="text-sm text-gray-500">How full were the waiting rooms?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="waitingRooms" formControlName="waitingRooms" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingRooms" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Full
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="waitingRooms" formControlName="waitingRooms" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingRooms" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Full
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitingRooms" formControlName="waitingRooms" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingRooms" class="ml-3 block text-sm font-medium text-gray-700">
+                          Normal 
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitingRooms" formControlName="waitingRooms" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingRooms" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Empty
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="waitingRooms" formControlName="waitingRooms" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="waitingRooms" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Empty
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+      
+                      <p class="text-sm text-gray-500">How satisfied were you with the degree of separation existed for those with COVID symptoms?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="separation" formControlName="separation" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="separation" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="separation" formControlName="separation" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="separation" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="separation" formControlName="separation" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="separation" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="separation" formControlName="separation" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="separation" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="separation" formControlName="separation" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="separation" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+               
+                      <p class="text-sm text-gray-500">How do you feel about the hospital's Covid Screening</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="screening" formControlName="screening" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="screening" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="screening" formControlName="screening" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="screening" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsatisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="screening" formControlName="screening" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="screening" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="screening" formControlName="screening" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="screening" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="screening" formControlName="screening" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="screening" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                    
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How safe did you feel around Covid in the hospital?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="safety" formControlName="safety" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="safety" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsafe
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="safety" formControlName="safety" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="safety" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Unsafe
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="safety" formControlName="safety" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="safety" class="ml-3 block text-sm font-medium text-gray-700">
+                          Safe
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="safety" formControlName="safety" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="safety" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Safe
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="safety" formControlName="safety" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="safety" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Safe
+                        </label>
+                      </div>                  
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">Did you visit for Covid Symptoms?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="covid1" formControlName="covid1" value="true"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="covid1" class="ml-3 block text-sm font-medium text-gray-700">
+                          Yes
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="covid1" formControlName="covid1" value="false"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="covid1" class="ml-3 block text-sm font-medium text-gray-700">
+                          No
+                        </label>
+                      </div>
+                      </div>
+                                      
+                    </div>
+
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                      <legend class="text-base font-medium text-gray-900">If Yes.</legend>
+                      <p class="text-sm text-gray-500">How satisfied were you with the protocols followed?</p>
+                    </div>
+
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="protocols" formControlName="protocols" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="protocols" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="protocols" formControlName="protocols" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="protocols" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Satisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="protocols" formControlName="protocols" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="protocols" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="protocols" formControlName="protocols" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="protocols" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="protocols" formControlName="protocols" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="protocols" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                  
+                    </div>
+                  </fieldset>
+                  <fieldset>
+                    <div>
+                  
+                      <p class="text-sm text-gray-500">How satisfied were you with your Covid treatment at this hospital</p>
+                    </div>
+                    <div class="md:grid md:grid-cols-5 md:gap-6">
+                    
+                      
+                      <div class="flex items-center ">
+                        <input id="treatment" formControlName="treatment" value="1"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="treatment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Very Unsatisfied
+                        </label>
+                      </div>
+
+                        <div class="relative">
+                      <div class="flex items-center">
+                        <input id="treatment" formControlName="treatment" value="2"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="treatment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Slightly Satisfied
+                        </label>
+                      </div>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="treatment" formControlName="treatment" value="3"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="treatment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="treatment" formControlName="treatment" value="4"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="treatment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Highly Satisfied
+                        </label>
+                      </div>
+                      <div class="flex items-center">
+                        <input id="treatment" formControlName="treatment" value="5"  type="radio" class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                        <label for="treatment" class="ml-3 block text-sm font-medium text-gray-700">
+                          Extremely Satisfied
+                        </label>
+                      </div>                  
+                    </div>
+
+                  </fieldset>
+                  
+                </div>
+
+
+
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperPrevious>
+                    Back
+                  </button>
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" mat-button matStepperNext>
+                    Next
+                  </button>
+                
+                </div>
+              </div>
+            </form>        
+          </div>     
+        </div>
+      </div>
+    
+      
+
+
+
+    </mat-step>
+    <mat-step >
+      <ng-template matStepLabel><b>Comments</b></ng-template>    
+    
+            <div class="text-center">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Additional comments  </mat-label>
+          <textarea matInput placeholder="Ex. This hospital is..." formControlName="message"></textarea>
+        </mat-form-field>
+      </div>
+
+      <button (click)="addTotal()" routerLink="/hospital-view" id="lastbutton" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Submit
+      </button>
+   
+      
+    </mat-step>
+  </form>
+  </mat-horizontal-stepper>
+
+</div>
+ 
+

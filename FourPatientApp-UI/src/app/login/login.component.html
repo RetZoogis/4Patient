@@ -1,0 +1,12 @@
+    <div class="login-form">
+      <h1>Login</h1>
+      <form #loginForm="ngForm">
+        <div>
+          <input type="text" ngModel required #logincredential="ngModel" id="logincredential" name="LoginCredenetial" placeholder="Phone # or Email">
+        </div>
+        <div>
+          <input type="text" ngModel required #password="ngModel" id="password" name="password" placeholder="password">
+        </div>
+        <button [disabled]="!loginForm.form.valid" id="loginButton" class="btn btn-dark" (click)="login(logincredential.value, password.value)">Login</button>
+      </form>
+    </div>

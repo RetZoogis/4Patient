@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fourpatient-deployment
+  labels:
+	app: fourpatient
+spec:
+  replicas: 3
+  selector:
+    matchlabels:
+      app: fourpatient
+template:
+  metadata:
+    labels:
+      app: fourpatient
+  spec:
+    containers:
+    - name: angular-ui
+	  image: fourpatient-ui:1.0
+    imagePullPolicy: Always
+	  ports:
+ 	  - containerPort: 80
+     resources:
+          requests:
+            memory: '512Mi'
+            cpu: '200m'
+          limits:
+            memory: '1Gi'
+            cpu: '1000m'
+    - name: fourpatientapi-server
+	  image: fourpatientapi:1.0
+    imagePullPolicy: Always
+	  ports:
+ 	  - containerPort: 3306
+     resources:
+          requests:
+            memory: '512Mi'
+            cpu: '200m'
+          limits:
+            memory: '1Gi'
+            cpu: '1000m'
